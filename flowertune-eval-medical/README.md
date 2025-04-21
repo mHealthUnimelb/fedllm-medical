@@ -31,7 +31,7 @@ python eval.py \
 --run-name=fl  \ # specified name for this run  
 --batch-size=16 \
 --quantization=4 \
---datasets=pubmedqa,medmcqa,medqa
+--datasets=pubmedqa,medmcqa,medqa,careqa
 ```
 
 The model answers and accuracy values will be saved to `benchmarks/generation_{dataset_name}_{run_name}.jsonl` and `benchmarks/acc_{dataset_name}_{run_name}.txt`, respectively.
