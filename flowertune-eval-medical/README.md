@@ -1,7 +1,7 @@
 # Evaluation for Medical challenge
 
 We build up a medical question answering (QA) pipeline to evaluate our fined-tuned LLMs.
-Three datasets have been selected for this evaluation: [PubMedQA](https://huggingface.co/datasets/bigbio/pubmed_qa), [MedMCQA](https://huggingface.co/datasets/medmcqa), and [MedQA](https://huggingface.co/datasets/bigbio/med_qa). 
+Three datasets have been selected for this evaluation: [PubMedQA](https://huggingface.co/datasets/bigbio/pubmed_qa), [MedMCQA](https://huggingface.co/datasets/medmcqa), [MedQA](https://huggingface.co/datasets/bigbio/med_qa) and [CareQA](https://huggingface.co/datasets/HPAI-BSC/CareQA). 
 
 
 ## Environment Setup
@@ -27,7 +27,7 @@ huggingface-cli login
 
 ```bash
 python eval.py \
---peft-path=/path/to/fine-tuned-peft-model-dir/ \ # e.g., ./peft_1
+--peft-path=/path/to/fine-tuned-peft-model-dir/ \ # e.g., ./peft_4
 --run-name=fl  \ # specified name for this run  
 --batch-size=16 \
 --quantization=4 \

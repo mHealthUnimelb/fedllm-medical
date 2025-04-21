@@ -1,6 +1,6 @@
 # FlowerTune LLM on Medical Dataset
 
-This directory conducts federated instruction tuning with a pretrained [johnsnowlabs/JSL-MedLlama-3-8B-v1.0](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) model on a [Medical dataset](https://huggingface.co/johnsnowlabs/JSL-MedLlama-3-8B-v1.0).
+This directory conducts federated instruction tuning with a pretrained [johnsnowlabs/JSL-MedLlama-3-8B-v2.0](https://huggingface.co/johnsnowlabs/JSL-MedLlama-3-8B-v2.0) model on a [Medical dataset](https://huggingface.co/datasets/medalpaca/medical_meadow_medical_flashcards).
 We use [Flower Datasets](https://flower.dev/docs/datasets/) to download, partition and preprocess the dataset.
 Flower's Simulation Engine is used to simulate the LLM fine-tuning process in federated way,
 which allows users to perform the training on a single GPU.
@@ -9,7 +9,7 @@ which allows users to perform the training on a single GPU.
 
 The fine-tuning results have been submitted as a PEFT adapter and can be accessed here:
 
-- [FlowerTune-JSL-MedLlama-3-8B-Instruct-Medical-PEFT](https://huggingface.co/mrs83/FlowerTune-Qwen2.5-7B-Instruct-Medical-PEFT)
+- [FlowerTune-JSL-MedLlama-3-8B-Instruct-Medical-PEFT](https://github.com/mHealthUnimelb/fedllm-medical/tree/main/flowertune-eval-medical/peft_4)
 
 ## Methodology
 
@@ -18,7 +18,7 @@ The clients' models are aggregated with FedProx strategy.
 
 ### JSL-MedLlama-3-8B-Instruct
 
-For the **JSL-MedLlama-3-8B-v1.0** model, we adopted the following fine-tuning methodology:
+For the **JSL-MedLlama-3-8B-v2.0** model, we adopted the following fine-tuning methodology:
 
 - **Precision**: bf16 for model weights, tf32 for gradients and optimizer states.
 - **Quantization**: 4-bit quantization for reduced memory usage.
@@ -42,14 +42,15 @@ When bf16 and tf32 are enabled, model weights are stored in bf16 format, while g
 
 ### Evaluation Results
 
-- **pubmedqa**: 0.588
-- **medqa**: 0.252
-- **medmcqa**: 0.276
-- **average**: 0.385
+- **pubmedqa**: 0.586
+- **medmcqa**: 0.275
+- **medqa**: 0.303
+- **careqa**: 0.408
+- **average**: 0.393
 
 ### Communication Budget
 
-46228 Megabytes
+117.14 Megabytes
 
 ## Environments setup
 
