@@ -50,7 +50,7 @@ When bf16 and tf32 are enabled, model weights are stored in bf16 format, while g
 
 ### Communication Budget
 
-117.14 Megabytes
+273.33 Megabytes
 
 ## Environments setup
 
