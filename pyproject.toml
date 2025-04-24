@@ -59,7 +59,7 @@ train.training-arguments.tf32 = true
 train.training-arguments.optim = "paged_adamw_8bit"
 strategy.fraction-fit = 0.15
 strategy.fraction-evaluate = 0.0
-num-server-rounds = 20
+num-server-rounds = 4
 
 [tool.flwr.app.config.static]
 dataset.name = "medalpaca/medical_meadow_medical_flashcards"
